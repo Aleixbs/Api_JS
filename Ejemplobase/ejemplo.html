@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.42/esri/css/esri.css">
+    <script src="https://js.arcgis.com/3.42/"></script>
+
+    <script src="./ejemplo.js"></script>
+
+    <title>Document</title>
+    <style>
+        html, body, #divMap{
+            height: 100%;
+            width: 100%;
+            padding:0;
+            margin:0;
+        }
+        .button{
+            position: absolute; 
+            z-index: 1;
+            top: 10rem;
+            left: 1rem; 
+            background-color: black; 
+            color: white; 
+            padding: 1rem; 
+            border-radius: 20px;
+            cursor: pointer;
+        }  
+        .button:hover{
+            background-color: white;
+            color:black;
+        }
+        .texto{
+            top: 10rem;
+            left: 10rem;
+            background-color: white;    
+            position:absolute;
+            font-size: 2rem;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" id="boton">Vamos a Chile</button>
+    <div id="texto" class="texto"></div>
+    <div id="divMap"></div>
+    
+    
+</body>
+</html>
