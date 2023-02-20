@@ -41,7 +41,7 @@ require(
             // Capturamos el elemento div en el cuál queremos añadirle el texto
             var divResultado = document.getElementById('texto');  // == dom.byId('texto')
 
-            // Añadimos el texto deseado que se irá actualizando 
+            // Añadimos el texto deseado que se irá actualizando en este caso el nivel de zoom que se incidirá en el mapa
             divResultado.innerHTML = zoom
 
 
