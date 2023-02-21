@@ -1,0 +1,25 @@
+html, body, #map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: none;
+    overflow: hidden;
+    font-family: "Trebuchet MS";
+}
+
+#bcMain {
+    width: 100%;
+    height: 100%;
+}
+
+#divSearch {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    left: 75px;
+}
