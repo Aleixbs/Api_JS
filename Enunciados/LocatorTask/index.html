@@ -18,17 +18,16 @@
 	<link rel="stylesheet" href="css/locatortask.css">
 	
     <script src="http://js.arcgis.com/3.42/"></script>
-	<script src="js/map.js"></script>
+	<script src="./js/map.js"></script>
     
 </head>
 
 <body class="nihilo">
 <div id="bcMain" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
     <div id="cpHeader"  data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
-        <textarea id="taAddress" type="text">
-            <!-- 380 New York St, Redlands -->
-        </textarea>
-        <button id="btnLocate" data-dojo-type="dijit/form/Button">Locate</button>
+        <textarea id="taAddress" type="text">80 New York St, Redlands</textarea>
+        <!-- El boton funciona sin dijit -->
+        <button id="btnLocate">Locate</button>
     </div>
     <div id="cpCenter" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
       
