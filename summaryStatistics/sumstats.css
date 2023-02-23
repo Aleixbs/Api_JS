@@ -16,17 +16,13 @@ body {
     height: 100%;
 }
 
-#cpLeading {
-    width: 117px;
+/* #cpHeader {
+    height: auto;
+    align: right;
 }
 
-#BasemapToggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
-}
-
-#search{
-    align-self: right;
-}
+#taAddress {
+    height: 20px;
+    width: 250px;
+    vertical-align: middle;
+} */

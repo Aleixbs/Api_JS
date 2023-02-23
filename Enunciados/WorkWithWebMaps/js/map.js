@@ -6,12 +6,14 @@ require([
   "esri/dijit/BasemapGallery",
   "esri/dijit/Legend",
   "esri/arcgis/utils",
+  "esri/dijit/Search", 
   "dojo/parser",
   "dojo/domReady!",
   ], function (
     BasemapGallery,
     Legend,
     arcgisUtils,
+    Search,
     parser) {
 
     parser.parse();
@@ -24,6 +26,9 @@ require([
 
       // Título
       document.getElementById('title').innerHTML = response.itemInfo.item.title // == dom.byId('title).innerHTML = response.itemInfo.item.title
+
+      //Search bar 
+      var searchWidget = new Search()
 
       // Leyenda
 
