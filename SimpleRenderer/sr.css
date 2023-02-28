@@ -1,0 +1,13 @@
+html, body, #map{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+#legend{
+    position: absolute !important; 
+    background-color: white;
+    bottom: 2rem; 
+    left: 2rem;
+    padding: 1rem;
+}
