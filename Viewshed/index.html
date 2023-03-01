@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Viewshed Analysis</title>
+
+    <!-- Configure dojo for asynchronous module loading -->
+    <script>
+        var dojoConfig = {
+            async: true
+        };
+    </script>
+
+    <!-- Reference libraries. The first CSS is a Dojo theme that gives dijits a consistent style. -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.43/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.43/esri/css/esri.css">
+    <link rel="stylesheet" href="css/viewshedanalysis.css"/>
+    <script src="http://js.arcgis.com/3.43/"></script>
+    <script src="js/map.js"></script>
+    <style>
+        html,body,#divMap{
+            height: 100%; 
+            width: 100%;
+            margin: 0; 
+            padding: 0; 
+        }
+        #boton{
+            position: absolute !important; 
+            top: 2rem; 
+            right: 2rem; 
+            padding: 1rem 2rem;
+        }
+    </style>
+</head>
+
+<body class="nihilo">
+<div id="divMap"></div>
+<button id="boton">Edita</button>
+</body>
+</html>
+
+
+
+
+<!-- var mapMain;
+
+require([
+        "esri/map",
+
+        "esri/graphic",
+        "esri/toolbars/draw",
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/symbols/SimpleFillSymbol",
+        "esri/Color",
+
+        "esri/tasks/Geoprocessor",
+        "esri/tasks/FeatureSet",
+        "esri/tasks/LinearUnit",
+
+        "dojo/on",
+        "dojo/parser",
+
+        "dojo/domReady!"
+
+    ], function (
+        Map,
+
+        Graphic,
+        Draw,
+        SimpleMarkerSymbol,
+        SimpleFillSymbol,
+        Color,
+
+        Geoprocessor,
+        FeatureSet,
+        LinearUnit,
+
+        on,
+        parser
+        ){
+
+        // Parse DOM nodes decorated with the data-dojo-type attribute
+        parser.parse();
+
+
+        // Create the map
+        mapMain = new Map("divMap", {
+                basemap: "topo",
+                center: [-122.45, 37.75],
+                zoom: 12
+            });
+
+        //Pintar un punto (crear la capacidad de hacer un draw en la capa grafica del mapa (map graphics layer))
+
+        var drawingTool = new Draw(mapMain, {})
+
+        function newDraw(){
+
+            mapMain.graphics.clear()
+
+            drawingTool.activate(Draw.POINT)
+        }
+
+        //Creamos un botón para iniciar la edición
+        var boton = document.getElementById('boton')
+        boton.addEventListener('click', newDraw)
+
+        //Crear una función que pinte el punto en una capa grafica
+        var capaEditable;
+        function addToMap(event){
+
+            drawingTool.deactivate(); 
+
+            var pointSymbol = new SimpleMarkerSymbol();
+            pointSymbol.setColor(new Color([255,255,0,0.25]));
+    
+            capaEditable = new Graphic(event.geometry,pointSymbol);
+            mapMain.graphics.add(capaEditable); 
+
+            addViewshed(capaEditable)
+        }
+      
+        //Recojer el evento de pintar un punto y ejecutamos la función de añadirlo al mapaa
+        drawingTool.on('draw-end', addToMap) 
+        
+
+        //Lanzar la petición al servicio de geoprocesamiento viewshed
+        viewshedUrl = 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Elevation/ESRI_Elevation_World/GPServer/Viewshed'
+
+        
+        function addViewshed(mapFeatures){
+
+            var viewshedGP = new Geoprocessor(viewshedUrl,{
+                outputSpatialReference: 102100
+            })
+
+            var puntos = []
+            puntos.push(mapFeatures);
+
+            var puntosObservador = new FeatureSet()
+            puntosObservador.features = puntos; 
+
+            var distanciaObservador = new LinearUnit(); 
+            distanciaObservador.distance = 5;
+            distanciaObservador.units = "esriKilometers";
+
+            viewshedGP.execute({
+                 "Input_Observation_Point": puntosObservador, 
+                 "Viewshed_Distance": distanciaObservador });
+
+            viewshedGP.on('execute-complete', drawViewshed)
+        }
+
+        //Devolver la petición y mostar el resultado en el mapa 
+        function drawViewshed(results, messages){
+
+            var polySymbol = new SimpleFillSymbol();
+            polySymbol.setColor(new Color([255, 127, 0, 0.7]));
+            console.log(results)
+            console.log(messages)
+
+            var puntosresultado = results[0].value.features; 
+            console.log(puntosresultado)
+        }
+            
+           
+    });
+           
+    }); -->
