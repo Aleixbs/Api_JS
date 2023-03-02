@@ -88,6 +88,7 @@ require([
         viewshedUrl = 'http://sampleserver6.arcgisonline.com/arcgis/rest/services/Elevation/ESRI_Elevation_World/GPServer/Viewshed'
 
         
+        //Creamos la función que añadirá el viewshed al mapa
         function addViewshed(mapFeatures){
 
             var viewshedGP = new Geoprocessor(viewshedUrl)
@@ -113,7 +114,7 @@ require([
 
         
 
-        //Devolver la petición y mostar el resultado en el mapa 
+        //Devolver la petición de servicio de geoprocesamiento y creamos la simbología que será representada en el mapa
         function drawViewshed(results, messages){
 
             var polySymbol = new SimpleFillSymbol();
