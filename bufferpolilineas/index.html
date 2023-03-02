@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffer Polilineas</title>
+
+    <!-- Configure dojo for asynchronous module loading -->
+    <script>
+        var dojoConfig = {
+            async: true
+        };
+    </script>
+
+    <!-- Reference libraries. The first CSS is a Dojo theme that gives dijits a consistent style. -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.43/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.43/esri/css/esri.css">
+    <script src="http://js.arcgis.com/3.43/"></script>
+    <script src="./map.js"></script>
+
+    <style>
+        html, body, #map{
+            height: 100%; 
+            width: 100%;
+            margin: 0; 
+            padding: 0; 
+        }
+        #boton{
+            position: absolute !important;
+            top: 8rem; 
+            left: 1rem; 
+            padding:1rem;
+            color:white; 
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <button id="boton">Editar</button>
+    
+</body>
+</html>
